@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import Prodcuts from "./components/products/Products";
-
+import User from "./components/user/User";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -13,8 +13,9 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
+      <div className="App container">
         <Prodcuts />
+        <User />
       </div>
     </QueryClientProvider>
   );

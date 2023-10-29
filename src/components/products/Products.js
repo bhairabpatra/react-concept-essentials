@@ -8,11 +8,10 @@ const Prodcuts = () => {
 
     const fetchProducts = async () => {
         const response = await axios.get(apiUrl);
-        console.log(response.data);
         return response.data;
     };
 
-    const { data, isLoading,error,refetch} = useQuery('products', fetchProducts);
+    const { data, isLoading,error,refetch} = useQuery('products', () => fetchProducts());
 
     if (isLoading) {
         return <h1>Loading ....</h1>;
@@ -29,7 +28,7 @@ const Prodcuts = () => {
                 <li key={product?.id}>{product?.title}</li>
                 ))}
             </ul>
-            <button onClick={refetch}>refetch</button>
+            <button onClick={refetch} className="btn btn-primary btn-md">Re fetch</button>
         </div>
     );
     };
