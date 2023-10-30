@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
-import Prodcuts from "./components/products/Products";
-import User from "./components/user/User";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Common/Header/Header";
+import Footer from "./components/Common/Footer/Footer";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -13,12 +14,15 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App container">
-        <Prodcuts />
-        <User />
+      <div className="App">
+        <Header />
+          <Outlet />
+        <Footer />
+ 
       </div>
     </QueryClientProvider>
   );
 }
 
 export default App;
+

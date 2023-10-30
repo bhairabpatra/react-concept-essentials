@@ -8,7 +8,7 @@ const Prodcuts = () => {
 
     const fetchProducts = async () => {
         const response = await axios.get(apiUrl);
-        return response.data;
+        return response?.data;
     };
 
     const { data, isLoading,error,refetch} = useQuery('products', () => fetchProducts());
@@ -22,7 +22,7 @@ const Prodcuts = () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <ul>
                 {data?.map((product) => (
                 <li key={product?.id}>{product?.title}</li>

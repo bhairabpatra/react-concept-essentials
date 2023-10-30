@@ -14,7 +14,7 @@ const User = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       {user.length > 0 ? (
         <div>
           <ul>
