@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const Prodcuts = () => {
-    
+    console.log("This is Prodcuts ")
     const apiUrl = process.env.REACT_APP_API_URL;
 
     const fetchProducts = async () => {

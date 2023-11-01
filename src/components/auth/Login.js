@@ -4,9 +4,11 @@ import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import {yupResolver} from "@hookform/resolvers/yup"
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+
 const Login = () =>{
 
+
+    console.log("This is Login ")
     const schema = yup.object().shape({
         email:yup.string().email().required("Email can't be blanck"),
         pwd:yup.string().required("Password can't be blanck")
